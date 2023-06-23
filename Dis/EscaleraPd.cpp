@@ -14,7 +14,7 @@ float generaEnteros(int *E, int n, int k, vector<int> &Rotos, int p, vector<int>
 
     for (int j = 1; j <= k; j++)
     {
-        int a = rand() % n;
+        int a = (rand() % (n - 1)) + 1;
         if (E[a] != 0)
         {
             E[a] = 0;
@@ -62,38 +62,55 @@ bool esEscalonRoto(int escalon, const vector<int> &Rotos)
     return false;
 }
 
-void Caminos(int n, vector<int> &Rotos, vector<int> &Camino, int escalon, vector<int> &Saltos, int &contador, vector<int> &caminoCorto)
+void Caminos(int n, vector<int> &Rotos, vector<int> &Camino, vector<int> &Saltos)
 {
-    // Alcanzar la estrella
-    if (escalon == n)
+    int caminosGuardados[n + 1] = {0};
+
+    caminosGuardados[0] = 1;
+
+    for (int i = 1; i <= n; i++)
     {
-        contador++;
-
-        if (Camino.size() < caminoCorto.size())
+        if (!esEscalonRoto(i, Rotos))
         {
-            caminoCorto = Camino;
+            for (int saltos : Saltos)
+            {
+                if ((i - saltos) >= 0)
+                {
+                    caminosGuardados[i] += caminosGuardados[i - saltos];
+                }
+            }
         }
-
-        for (int e : Camino)
-        {
-            cout << e << " ";
-        }
-        cout << endl;
-
-        return;
     }
 
-    for (int s : Saltos)
-    {
-        int siguienteEscalon = escalon + s;
+/*     vector<int> caminoCorto;
 
-        if (siguienteEscalon <= n && !esEscalonRoto(siguienteEscalon, Rotos) )
+    if (caminosGuardados[n] > 0)
+    {
+        int s = Saltos.size();
+        int m = n;
+
+        while (s > 0 && (m - s) > 0)
         {
-            Camino.push_back(siguienteEscalon);
-            Caminos(n, Rotos, Camino, siguienteEscalon, Saltos, contador, caminoCorto);
-            Camino.pop_back();
+            
+
+            if (caminosGuardados[m - s] > 0)
+            {
+                caminoCorto.push_back(m - s);
+                m -= s;
+            }
         }
-    }
+    } */
+
+    for (int h = 0; h <= n; h++)
+        cout << caminosGuardados[h] << "[" << h << "] ";
+    cout << endl;
+
+    cout << "Caminos posibles: " << caminosGuardados[n] << endl;
+
+/*     cout << "Camino mas corto: ";
+    for (int h = 0; h < caminoCorto.size(); h++)
+        cout << caminoCorto[h] << " ";
+    cout << endl; */
 }
 
 int main(int argc, char **argv)
@@ -104,7 +121,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    //srand(time(NULL));
+    srand(time(NULL));
     int n = atoi(argv[1]);
     int k = atoi(argv[2]);
     int p = atoi(argv[3]);
@@ -116,22 +133,7 @@ int main(int argc, char **argv)
     generaEnteros(E, n, k, Rotos, p, Saltos);
     printArray(E, n, Rotos, k, Saltos);
 
-    int totalCaminos = 0;
-    vector<int> caminoCorto(n + 1, INT_MAX);
-
-    Caminos(n, Rotos, Camino, 0, Saltos, totalCaminos, caminoCorto);
-
-    cout << "Total de caminos posibles: " << totalCaminos << endl;
-
-    cout << "Camino más corto: ";
-    for (int e : caminoCorto)
-    {
-        if (e != INT_MAX)
-        {
-            cout << e << " ";
-        }
-    }
-    cout << endl;
+    Caminos(n, Rotos, Camino, Saltos);
 
     return 0;
 }
