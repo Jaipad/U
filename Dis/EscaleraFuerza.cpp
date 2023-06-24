@@ -73,13 +73,6 @@ void Caminos(int n, vector<int> &Rotos, vector<int> &Camino, int escalon, vector
         {
             caminoCorto = Camino;
         }
-
-        for (int e : Camino)
-        {
-            cout << e << " ";
-        }
-        cout << endl;
-
         return;
     }
 
@@ -87,7 +80,7 @@ void Caminos(int n, vector<int> &Rotos, vector<int> &Camino, int escalon, vector
     {
         int siguienteEscalon = escalon + s;
 
-        if (siguienteEscalon <= n && !esEscalonRoto(siguienteEscalon, Rotos) )
+        if (siguienteEscalon <= n && !esEscalonRoto(siguienteEscalon, Rotos))
         {
             Camino.push_back(siguienteEscalon);
             Caminos(n, Rotos, Camino, siguienteEscalon, Saltos, contador, caminoCorto);
@@ -104,25 +97,20 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    //srand(time(NULL));
+    // srand(time(NULL));
     int n = atoi(argv[1]);
     int k = atoi(argv[2]);
     int p = atoi(argv[3]);
     int E[n];
-
     vector<int> Rotos;
     vector<int> Camino;
     vector<int> Saltos;
     generaEnteros(E, n, k, Rotos, p, Saltos);
     printArray(E, n, Rotos, k, Saltos);
-
     int totalCaminos = 0;
     vector<int> caminoCorto(n + 1, INT_MAX);
-
     Caminos(n, Rotos, Camino, 0, Saltos, totalCaminos, caminoCorto);
-
     cout << "Total de caminos posibles: " << totalCaminos << endl;
-
     cout << "Camino más corto: ";
     for (int e : caminoCorto)
     {
@@ -132,6 +120,5 @@ int main(int argc, char **argv)
         }
     }
     cout << endl;
-
     return 0;
 }
