@@ -11,10 +11,15 @@ float generaEnteros(int *E, int n, int k, vector<int> &Rotos, int p, vector<int>
     {
         E[i] = i;
     }
-
+    /* Rotos.push_back(36);
+    Rotos.push_back(10);
+    Rotos.push_back(18);
+    Rotos.push_back(39);
+    Rotos.push_back(9);
+ */
     for (int j = 1; j <= k; j++)
     {
-        int a = rand() % n;
+        int a = (rand() % (n - 1)) + 1;
         if (E[a] != 0)
         {
             E[a] = 0;
@@ -44,6 +49,7 @@ void printArray(int *E, int n, vector<int> &Rotos, int k, vector<int> &Saltos)
     for (int j = 0; j < k; j++)
         cout << Rotos[j] << " ";
     cout << endl;
+
     cout << "Saltos = ";
     for (int h = 0; h < Saltos.size(); h++)
         cout << Saltos[h] << " ";
@@ -68,7 +74,8 @@ void Caminos(int n, vector<int> &Rotos, vector<int> &Camino, int escalon, vector
     if (escalon == n)
     {
         contador++;
-
+        cout<<contador;
+        cout<<endl;
         if (Camino.size() < caminoCorto.size())
         {
             caminoCorto = Camino;
@@ -97,7 +104,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    // srand(time(NULL));
+    srand(time(NULL));
     int n = atoi(argv[1]);
     int k = atoi(argv[2]);
     int p = atoi(argv[3]);
@@ -105,10 +112,13 @@ int main(int argc, char **argv)
     vector<int> Rotos;
     vector<int> Camino;
     vector<int> Saltos;
+
     generaEnteros(E, n, k, Rotos, p, Saltos);
     printArray(E, n, Rotos, k, Saltos);
     int totalCaminos = 0;
     vector<int> caminoCorto(n + 1, INT_MAX);
+    clock_t inicio = clock();
+
     Caminos(n, Rotos, Camino, 0, Saltos, totalCaminos, caminoCorto);
     cout << "Total de caminos posibles: " << totalCaminos << endl;
     cout << "Camino más corto: ";
@@ -120,5 +130,9 @@ int main(int argc, char **argv)
         }
     }
     cout << endl;
+    clock_t fin = clock();
+    double duracion = (double)(fin - inicio) / CLOCKS_PER_SEC;
+    cout << "Tiempo de ejecución: " << duracion << " segundos" << endl;
+
     return 0;
 }
