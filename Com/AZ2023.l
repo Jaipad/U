@@ -15,9 +15,7 @@ CHAR_COMA           [","]
 CHAR_PUNTO          ["."]
 CHAR_PUNTOYCOMA     [";"]
 CHAR_DOSPUNTOS      [":"]
-
 IDENTIFICADOR       {LETRA_MAYUSCULA}{DIGITO}
-
 /*Operaciones logicas y operadores aritmeticos basicos*/
 SUMA                ["+"]
 RESTA               ["-"]
@@ -36,7 +34,10 @@ INICIO              "inicio"|"INICIO"
 LEER                "leer"|"LEER" 
 ENTONCES            "entonces"|"ENTONCES"
 
+/*seccion de reglas*/
 %%
-
+{INICIO}            {printf("\nPalabra reservada inicio: (%s)", yytex;)}
+{LEER}              {printf("\nPalabra reservada leer: (%s)", yytex;)}
+{ENTONCES}          {printf("\nPalabra reservada entonces: (%s)", yytex;)}
 %%
 Codigo de usuario
