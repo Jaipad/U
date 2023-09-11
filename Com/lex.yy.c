@@ -415,7 +415,8 @@ FILE *yyin;
 /* Definiciones */
 /*Operaciones logicas y operadores aritmeticos basicos*/
 /*palabras reservadas*/
-#line 419 "lex.yy.c"
+/*seccion de reglas*/
+#line 420 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -566,9 +567,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 44 "AZ2023.l"
+#line 43 "AZ2023.l"
 
-#line 572 "lex.yy.c"
+#line 573 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -661,55 +662,55 @@ do_action:	/* This label is used only to access EOF actions. */
 	{ /* beginning of action switch */
 case 1:
 YY_RULE_SETUP
-#line 45 "AZ2023.l"
+#line 44 "AZ2023.l"
 {printf("\n Palabra reservada INICIO: (%s)", yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 46 "AZ2023.l"
+#line 45 "AZ2023.l"
 {printf("\nPalabra reservada LEER: (%s)", yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 47 "AZ2023.l"
+#line 46 "AZ2023.l"
 {printf("\nPalabra reservada ENTONCES: (%s)", yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 48 "AZ2023.l"
+#line 47 "AZ2023.l"
 {printf("\nOperador digito: (%s)", yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 49 "AZ2023.l"
+#line 48 "AZ2023.l"
 {printf("\nSimbolo punto y coma: (%s)", yytext);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 50 "AZ2023.l"
+#line 49 "AZ2023.l"
 {printf("\nOperador suma: (%s)", yytext);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 51 "AZ2023.l"
+#line 50 "AZ2023.l"
 {printf("\nOperador resta: (%s)", yytext);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 52 "AZ2023.l"
+#line 51 "AZ2023.l"
 {printf("\nOperador igual: (%s)", yytext);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 55 "AZ2023.l"
+#line 54 "AZ2023.l"
 {printf("\nIdentificador (%s)",yytext);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 57 "AZ2023.l"
+#line 56 "AZ2023.l"
 ECHO;
 	YY_BREAK
-#line 713 "lex.yy.c"
+#line 714 "lex.yy.c"
 			case YY_STATE_EOF(INITIAL):
 				yyterminate();
 
@@ -1593,7 +1594,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 57 "AZ2023.l"
+#line 56 "AZ2023.l"
 
 /*Codigo de usuario*/
 int main(int arc,char *argv[]){
@@ -1612,7 +1613,6 @@ printf("\nFLEX Finalizo la lectura del archivo %s \n", argv[1]);
 fclose(yyin);
 return 0;*/
 }
-
 int yyerror(void){
     printf("\nErrorlexico: caracter invalido: %s\n", yytext);
     exit(1);
