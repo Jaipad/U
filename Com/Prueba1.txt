@@ -1,0 +1,7 @@
+INICIO
+    B1=23;
+    B3=234;
+    C4=B1+B3;
+ENTONCES 
+
+LEER
