@@ -20,9 +20,7 @@ CHAR_COMA           [","]
 CHAR_PUNTO          ["."]
 CHAR_PUNTOYCOMA     [";"]
 CHAR_DOSPUNTOS      [":"]
-
 IDENTIFICADOR       {LETRA_MAYUSCULA}{DIGITO}
-
 /*Operaciones logicas y operadores aritmeticos basicos*/
 SUMA                ["+"]
 RESTA               ["-"]
@@ -41,6 +39,7 @@ INICIO              "inicio"|"INICIO"
 LEER                "leer"|"LEER" 
 ENTONCES            "entonces"|"ENTONCES"
 
+/*seccion de reglas*/
 %%
 {INICIO}            {printf("\n Palabra reservada INICIO: (%s)", yytext);}
 {LEER}              {printf("\nPalabra reservada LEER: (%s)", yytext);}
@@ -72,7 +71,6 @@ printf("\nFLEX Finalizo la lectura del archivo %s \n", argv[1]);
 fclose(yyin);
 return 0;*/
 }
-
 int yyerror(void){
     printf("\nErrorlexico: caracter invalido: %s\n", yytext);
     exit(1);
