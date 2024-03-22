@@ -1,0 +1,1225 @@
+<?xml version="1.0"?>
+
+<bison-xml-report version="3.8.2" bug-report="bug-bison@gnu.org" url="https://www.gnu.org/software/bison/">
+
+  <filename>AZ2023.y</filename>
+
+  <grammar>
+    <rules>
+      <rule number="0" usefulness="useful">
+        <lhs>$accept</lhs>
+        <rhs>
+          <symbol>programa</symbol>
+          <symbol>$end</symbol>
+        </rhs>
+      </rule>
+      <rule number="1" usefulness="useful">
+        <lhs>programa</lhs>
+        <rhs>
+          <symbol>INICIO</symbol>
+          <symbol>inst</symbol>
+          <symbol>FIN</symbol>
+        </rhs>
+      </rule>
+      <rule number="2" usefulness="useful">
+        <lhs>inst</lhs>
+        <rhs>
+          <symbol>inst</symbol>
+          <symbol>inst</symbol>
+        </rhs>
+      </rule>
+      <rule number="3" usefulness="useful">
+        <lhs>inst</lhs>
+        <rhs>
+          <symbol>inst_leer</symbol>
+        </rhs>
+      </rule>
+      <rule number="4" usefulness="useful">
+        <lhs>inst</lhs>
+        <rhs>
+          <symbol>inst_escribir</symbol>
+        </rhs>
+      </rule>
+      <rule number="5" usefulness="useful">
+        <lhs>inst</lhs>
+        <rhs>
+          <symbol>inst_si</symbol>
+        </rhs>
+      </rule>
+      <rule number="6" usefulness="useful">
+        <lhs>inst</lhs>
+        <rhs>
+          <symbol>inst_asig</symbol>
+        </rhs>
+      </rule>
+      <rule number="7" usefulness="useful">
+        <lhs>inst_leer</lhs>
+        <rhs>
+          <symbol>LEER</symbol>
+          <symbol>PAR_IZQ</symbol>
+          <symbol>IDENTIFICADOR</symbol>
+          <symbol>PAR_DER</symbol>
+        </rhs>
+      </rule>
+      <rule number="8" usefulness="useful">
+        <lhs>inst_escribir</lhs>
+        <rhs>
+          <symbol>ESCRIBIR</symbol>
+          <symbol>PAR_IZQ</symbol>
+          <symbol>texto</symbol>
+          <symbol>PAR_DER</symbol>
+        </rhs>
+      </rule>
+      <rule number="9" usefulness="useful">
+        <lhs>inst_escribir</lhs>
+        <rhs>
+          <symbol>ESCRIBIR</symbol>
+          <symbol>PAR_IZQ</symbol>
+          <symbol>IDENTIFICADOR</symbol>
+          <symbol>PAR_DER</symbol>
+        </rhs>
+      </rule>
+      <rule number="10" usefulness="useful">
+        <lhs>inst_si</lhs>
+        <rhs>
+          <symbol>SI</symbol>
+          <symbol>cond</symbol>
+          <symbol>ENTONCES</symbol>
+          <symbol>inst</symbol>
+        </rhs>
+      </rule>
+      <rule number="11" usefulness="useful">
+        <lhs>inst_asig</lhs>
+        <rhs>
+          <symbol>IDENTIFICADOR</symbol>
+          <symbol>IGUAL</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="12" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>ENTERO</symbol>
+        </rhs>
+      </rule>
+      <rule number="13" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>IDENTIFICADOR</symbol>
+        </rhs>
+      </rule>
+      <rule number="14" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>SUMA</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="15" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>RESTA</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="16" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>POR</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="17" usefulness="useful">
+        <lhs>exp</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>DIVIDIDO</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="18" usefulness="useful">
+        <lhs>cond</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>MENOR</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="19" usefulness="useful">
+        <lhs>cond</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>MAYOR</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+      <rule number="20" usefulness="useful">
+        <lhs>cond</lhs>
+        <rhs>
+          <symbol>exp</symbol>
+          <symbol>IGUAL_COMP</symbol>
+          <symbol>exp</symbol>
+        </rhs>
+      </rule>
+    </rules>
+    <terminals>
+      <terminal symbol-number="0" token-number="0" name="$end" type="" usefulness="useful"/>
+      <terminal symbol-number="1" token-number="256" name="error" type="" usefulness="useful"/>
+      <terminal symbol-number="3" token-number="258" name="INICIO" type="" usefulness="useful"/>
+      <terminal symbol-number="4" token-number="259" name="FIN" type="" usefulness="useful"/>
+      <terminal symbol-number="5" token-number="260" name="LEER" type="" usefulness="useful"/>
+      <terminal symbol-number="6" token-number="261" name="ESCRIBIR" type="" usefulness="useful"/>
+      <terminal symbol-number="7" token-number="262" name="SI" type="" usefulness="useful"/>
+      <terminal symbol-number="8" token-number="263" name="ENTONCES" type="" usefulness="useful"/>
+      <terminal symbol-number="9" token-number="264" name="IDENTIFICADOR" type="string_val" usefulness="useful"/>
+      <terminal symbol-number="10" token-number="265" name="ENTERO" type="entero" usefulness="useful"/>
+      <terminal symbol-number="11" token-number="266" name="IGUAL" type="" usefulness="useful"/>
+      <terminal symbol-number="12" token-number="267" name="SUMA" type="" usefulness="useful"/>
+      <terminal symbol-number="13" token-number="268" name="RESTA" type="" usefulness="useful"/>
+      <terminal symbol-number="14" token-number="269" name="POR" type="" usefulness="useful"/>
+      <terminal symbol-number="15" token-number="270" name="DIVIDIDO" type="" usefulness="useful"/>
+      <terminal symbol-number="16" token-number="271" name="MENOR" type="" usefulness="useful"/>
+      <terminal symbol-number="17" token-number="272" name="MAYOR" type="" usefulness="useful"/>
+      <terminal symbol-number="18" token-number="273" name="IGUAL_COMP" type="" usefulness="useful"/>
+      <terminal symbol-number="19" token-number="274" name="PAR_DER" type="" usefulness="useful"/>
+      <terminal symbol-number="20" token-number="275" name="PAR_IZQ" type="" usefulness="useful"/>
+      <terminal symbol-number="21" token-number="276" name="id" type="" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="22" token-number="277" name="cost" type="" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="23" token-number="278" name="texto" type="string_val" usefulness="useful"/>
+    </terminals>
+    <nonterminals>
+      <nonterminal symbol-number="24" name="$accept" type="" usefulness="useful"/>
+      <nonterminal symbol-number="25" name="programa" type="" usefulness="useful"/>
+      <nonterminal symbol-number="26" name="inst" type="" usefulness="useful"/>
+      <nonterminal symbol-number="27" name="inst_leer" type="" usefulness="useful"/>
+      <nonterminal symbol-number="28" name="inst_escribir" type="" usefulness="useful"/>
+      <nonterminal symbol-number="29" name="inst_si" type="tipo_inst" usefulness="useful"/>
+      <nonterminal symbol-number="30" name="inst_asig" type="" usefulness="useful"/>
+      <nonterminal symbol-number="31" name="exp" type="entero" usefulness="useful"/>
+      <nonterminal symbol-number="32" name="cond" type="tipo_inst" usefulness="useful"/>
+    </nonterminals>
+  </grammar>
+
+  <automaton>
+
+    <state number="0">
+      <itemset>
+        <item rule-number="0" dot="0"/>
+        <item rule-number="1" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="INICIO" state="1"/>
+          <transition type="goto" symbol="programa" state="2"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="1">
+      <itemset>
+        <item rule-number="1" dot="1"/>
+        <item rule-number="2" dot="0"/>
+        <item rule-number="3" dot="0"/>
+        <item rule-number="4" dot="0"/>
+        <item rule-number="5" dot="0"/>
+        <item rule-number="6" dot="0"/>
+        <item rule-number="7" dot="0"/>
+        <item rule-number="8" dot="0"/>
+        <item rule-number="9" dot="0"/>
+        <item rule-number="10" dot="0"/>
+        <item rule-number="11" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LEER" state="3"/>
+          <transition type="shift" symbol="ESCRIBIR" state="4"/>
+          <transition type="shift" symbol="SI" state="5"/>
+          <transition type="shift" symbol="IDENTIFICADOR" state="6"/>
+          <transition type="goto" symbol="inst" state="7"/>
+          <transition type="goto" symbol="inst_leer" state="8"/>
+          <transition type="goto" symbol="inst_escribir" state="9"/>
+          <transition type="goto" symbol="inst_si" state="10"/>
+          <transition type="goto" symbol="inst_asig" state="11"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="2">
+      <itemset>
+        <item rule-number="0" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="$end" state="12"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="3">
+      <itemset>
+        <item rule-number="7" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="PAR_IZQ" state="13"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="4">
+      <itemset>
+        <item rule-number="8" dot="1"/>
+        <item rule-number="9" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="PAR_IZQ" state="14"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="5">
+      <itemset>
+        <item rule-number="10" dot="1"/>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+        <item rule-number="18" dot="0"/>
+        <item rule-number="19" dot="0"/>
+        <item rule-number="20" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="17"/>
+          <transition type="goto" symbol="cond" state="18"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="6">
+      <itemset>
+        <item rule-number="11" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IGUAL" state="19"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="7">
+      <itemset>
+        <item rule-number="1" dot="2"/>
+        <item rule-number="2" dot="0"/>
+        <item rule-number="2" dot="1"/>
+        <item rule-number="3" dot="0"/>
+        <item rule-number="4" dot="0"/>
+        <item rule-number="5" dot="0"/>
+        <item rule-number="6" dot="0"/>
+        <item rule-number="7" dot="0"/>
+        <item rule-number="8" dot="0"/>
+        <item rule-number="9" dot="0"/>
+        <item rule-number="10" dot="0"/>
+        <item rule-number="11" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="FIN" state="20"/>
+          <transition type="shift" symbol="LEER" state="3"/>
+          <transition type="shift" symbol="ESCRIBIR" state="4"/>
+          <transition type="shift" symbol="SI" state="5"/>
+          <transition type="shift" symbol="IDENTIFICADOR" state="6"/>
+          <transition type="goto" symbol="inst" state="21"/>
+          <transition type="goto" symbol="inst_leer" state="8"/>
+          <transition type="goto" symbol="inst_escribir" state="9"/>
+          <transition type="goto" symbol="inst_si" state="10"/>
+          <transition type="goto" symbol="inst_asig" state="11"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="8">
+      <itemset>
+        <item rule-number="3" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="3" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="9">
+      <itemset>
+        <item rule-number="4" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="4" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="10">
+      <itemset>
+        <item rule-number="5" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="5" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="11">
+      <itemset>
+        <item rule-number="6" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="6" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="12">
+      <itemset>
+        <item rule-number="0" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="accept" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="13">
+      <itemset>
+        <item rule-number="7" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="22"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="14">
+      <itemset>
+        <item rule-number="8" dot="2"/>
+        <item rule-number="9" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="23"/>
+          <transition type="shift" symbol="texto" state="24"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="15">
+      <itemset>
+        <item rule-number="13" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="13" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="16">
+      <itemset>
+        <item rule-number="12" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="12" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="17">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+        <item rule-number="18" dot="1"/>
+        <item rule-number="19" dot="1"/>
+        <item rule-number="20" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+          <transition type="shift" symbol="MENOR" state="29"/>
+          <transition type="shift" symbol="MAYOR" state="30"/>
+          <transition type="shift" symbol="IGUAL_COMP" state="31"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="18">
+      <itemset>
+        <item rule-number="10" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="ENTONCES" state="32"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="19">
+      <itemset>
+        <item rule-number="11" dot="2"/>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="33"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="20">
+      <itemset>
+        <item rule-number="1" dot="3"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="1" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="21">
+      <itemset>
+        <item rule-number="2" dot="0"/>
+        <item rule-number="2" dot="1"/>
+        <item rule-number="2" dot="2">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="3" dot="0"/>
+        <item rule-number="4" dot="0"/>
+        <item rule-number="5" dot="0"/>
+        <item rule-number="6" dot="0"/>
+        <item rule-number="7" dot="0"/>
+        <item rule-number="8" dot="0"/>
+        <item rule-number="9" dot="0"/>
+        <item rule-number="10" dot="0"/>
+        <item rule-number="11" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LEER" state="3"/>
+          <transition type="shift" symbol="ESCRIBIR" state="4"/>
+          <transition type="shift" symbol="SI" state="5"/>
+          <transition type="shift" symbol="IDENTIFICADOR" state="6"/>
+          <transition type="goto" symbol="inst" state="21"/>
+          <transition type="goto" symbol="inst_leer" state="8"/>
+          <transition type="goto" symbol="inst_escribir" state="9"/>
+          <transition type="goto" symbol="inst_si" state="10"/>
+          <transition type="goto" symbol="inst_asig" state="11"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="LEER" rule="2" enabled="false"/>
+          <reduction symbol="ESCRIBIR" rule="2" enabled="false"/>
+          <reduction symbol="SI" rule="2" enabled="false"/>
+          <reduction symbol="IDENTIFICADOR" rule="2" enabled="false"/>
+          <reduction symbol="$default" rule="2" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="22">
+      <itemset>
+        <item rule-number="7" dot="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="PAR_DER" state="34"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="23">
+      <itemset>
+        <item rule-number="9" dot="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="PAR_DER" state="35"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="24">
+      <itemset>
+        <item rule-number="8" dot="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="PAR_DER" state="36"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="25">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="14" dot="2"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="37"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="26">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="15" dot="2"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="38"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="27">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="16" dot="2"/>
+        <item rule-number="17" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="39"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="28">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+        <item rule-number="17" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="40"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="29">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+        <item rule-number="18" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="41"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="30">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+        <item rule-number="19" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="42"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="31">
+      <itemset>
+        <item rule-number="12" dot="0"/>
+        <item rule-number="13" dot="0"/>
+        <item rule-number="14" dot="0"/>
+        <item rule-number="15" dot="0"/>
+        <item rule-number="16" dot="0"/>
+        <item rule-number="17" dot="0"/>
+        <item rule-number="20" dot="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="IDENTIFICADOR" state="15"/>
+          <transition type="shift" symbol="ENTERO" state="16"/>
+          <transition type="goto" symbol="exp" state="43"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="32">
+      <itemset>
+        <item rule-number="2" dot="0"/>
+        <item rule-number="3" dot="0"/>
+        <item rule-number="4" dot="0"/>
+        <item rule-number="5" dot="0"/>
+        <item rule-number="6" dot="0"/>
+        <item rule-number="7" dot="0"/>
+        <item rule-number="8" dot="0"/>
+        <item rule-number="9" dot="0"/>
+        <item rule-number="10" dot="0"/>
+        <item rule-number="10" dot="3"/>
+        <item rule-number="11" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LEER" state="3"/>
+          <transition type="shift" symbol="ESCRIBIR" state="4"/>
+          <transition type="shift" symbol="SI" state="5"/>
+          <transition type="shift" symbol="IDENTIFICADOR" state="6"/>
+          <transition type="goto" symbol="inst" state="44"/>
+          <transition type="goto" symbol="inst_leer" state="8"/>
+          <transition type="goto" symbol="inst_escribir" state="9"/>
+          <transition type="goto" symbol="inst_si" state="10"/>
+          <transition type="goto" symbol="inst_asig" state="11"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="33">
+      <itemset>
+        <item rule-number="11" dot="3">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="11" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="34">
+      <itemset>
+        <item rule-number="7" dot="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="7" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="35">
+      <itemset>
+        <item rule-number="9" dot="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="9" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="36">
+      <itemset>
+        <item rule-number="8" dot="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="8" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="37">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="14" dot="3">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>ENTONCES</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+            <symbol>SUMA</symbol>
+            <symbol>RESTA</symbol>
+            <symbol>POR</symbol>
+            <symbol>DIVIDIDO</symbol>
+            <symbol>MENOR</symbol>
+            <symbol>MAYOR</symbol>
+            <symbol>IGUAL_COMP</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="SUMA" rule="14" enabled="false"/>
+          <reduction symbol="RESTA" rule="14" enabled="false"/>
+          <reduction symbol="POR" rule="14" enabled="false"/>
+          <reduction symbol="DIVIDIDO" rule="14" enabled="false"/>
+          <reduction symbol="$default" rule="14" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="38">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="15" dot="3">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>ENTONCES</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+            <symbol>SUMA</symbol>
+            <symbol>RESTA</symbol>
+            <symbol>POR</symbol>
+            <symbol>DIVIDIDO</symbol>
+            <symbol>MENOR</symbol>
+            <symbol>MAYOR</symbol>
+            <symbol>IGUAL_COMP</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="SUMA" rule="15" enabled="false"/>
+          <reduction symbol="RESTA" rule="15" enabled="false"/>
+          <reduction symbol="POR" rule="15" enabled="false"/>
+          <reduction symbol="DIVIDIDO" rule="15" enabled="false"/>
+          <reduction symbol="$default" rule="15" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="39">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="16" dot="3">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>ENTONCES</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+            <symbol>SUMA</symbol>
+            <symbol>RESTA</symbol>
+            <symbol>POR</symbol>
+            <symbol>DIVIDIDO</symbol>
+            <symbol>MENOR</symbol>
+            <symbol>MAYOR</symbol>
+            <symbol>IGUAL_COMP</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="17" dot="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="SUMA" rule="16" enabled="false"/>
+          <reduction symbol="RESTA" rule="16" enabled="false"/>
+          <reduction symbol="POR" rule="16" enabled="false"/>
+          <reduction symbol="DIVIDIDO" rule="16" enabled="false"/>
+          <reduction symbol="$default" rule="16" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="40">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+        <item rule-number="17" dot="3">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>ENTONCES</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+            <symbol>SUMA</symbol>
+            <symbol>RESTA</symbol>
+            <symbol>POR</symbol>
+            <symbol>DIVIDIDO</symbol>
+            <symbol>MENOR</symbol>
+            <symbol>MAYOR</symbol>
+            <symbol>IGUAL_COMP</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="SUMA" rule="17" enabled="false"/>
+          <reduction symbol="RESTA" rule="17" enabled="false"/>
+          <reduction symbol="POR" rule="17" enabled="false"/>
+          <reduction symbol="DIVIDIDO" rule="17" enabled="false"/>
+          <reduction symbol="$default" rule="17" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="41">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+        <item rule-number="18" dot="3">
+          <lookaheads>
+            <symbol>ENTONCES</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="18" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="42">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+        <item rule-number="19" dot="3">
+          <lookaheads>
+            <symbol>ENTONCES</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="19" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="43">
+      <itemset>
+        <item rule-number="14" dot="1"/>
+        <item rule-number="15" dot="1"/>
+        <item rule-number="16" dot="1"/>
+        <item rule-number="17" dot="1"/>
+        <item rule-number="20" dot="3">
+          <lookaheads>
+            <symbol>ENTONCES</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="SUMA" state="25"/>
+          <transition type="shift" symbol="RESTA" state="26"/>
+          <transition type="shift" symbol="POR" state="27"/>
+          <transition type="shift" symbol="DIVIDIDO" state="28"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="20" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="44">
+      <itemset>
+        <item rule-number="2" dot="0"/>
+        <item rule-number="2" dot="1"/>
+        <item rule-number="3" dot="0"/>
+        <item rule-number="4" dot="0"/>
+        <item rule-number="5" dot="0"/>
+        <item rule-number="6" dot="0"/>
+        <item rule-number="7" dot="0"/>
+        <item rule-number="8" dot="0"/>
+        <item rule-number="9" dot="0"/>
+        <item rule-number="10" dot="0"/>
+        <item rule-number="10" dot="4">
+          <lookaheads>
+            <symbol>FIN</symbol>
+            <symbol>LEER</symbol>
+            <symbol>ESCRIBIR</symbol>
+            <symbol>SI</symbol>
+            <symbol>IDENTIFICADOR</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="11" dot="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LEER" state="3"/>
+          <transition type="shift" symbol="ESCRIBIR" state="4"/>
+          <transition type="shift" symbol="SI" state="5"/>
+          <transition type="shift" symbol="IDENTIFICADOR" state="6"/>
+          <transition type="goto" symbol="inst" state="21"/>
+          <transition type="goto" symbol="inst_leer" state="8"/>
+          <transition type="goto" symbol="inst_escribir" state="9"/>
+          <transition type="goto" symbol="inst_si" state="10"/>
+          <transition type="goto" symbol="inst_asig" state="11"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="LEER" rule="10" enabled="false"/>
+          <reduction symbol="ESCRIBIR" rule="10" enabled="false"/>
+          <reduction symbol="SI" rule="10" enabled="false"/>
+          <reduction symbol="IDENTIFICADOR" rule="10" enabled="false"/>
+          <reduction symbol="$default" rule="10" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+  </automaton>
+</bison-xml-report>

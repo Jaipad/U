@@ -40,8 +40,6 @@ INICIO              "INICIO"
 LEER                "LEER" 
 ENTONCES            "ENTONCES"
 FIN                 "FIN"
-texto               "("[^"]+")"
-
 /* Sección de reglas */
 %%
 
@@ -50,7 +48,6 @@ texto               "("[^"]+")"
 {IGUAL}             { return IGUAL; }
 {IDENTIFICADOR}     { yylval.string_val = strdup(yytext); return IDENTIFICADOR; }
 {ENTERO}            { yylval.entero = atoi(yytext); return ENTERO;}
-\"[^"]*\"           { yylval.string_val = strdup(yytext); return texto; }
 
 "INICIO"            { return INICIO; }
 "FIN"               { return FIN; }
@@ -60,4 +57,5 @@ texto               "("[^"]+")"
 "ENTONCES"          { return ENTONCES; }
 "("                 { return PAR_IZQ; }
 ")"                 { return PAR_DER; }
+
 %%

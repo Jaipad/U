@@ -1,0 +1,18 @@
+.aceptarButton {
+    background-color: #A1EB9E;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo para el botón "Cerrar" (rojo) */
+.cancelarButton {
+    background-color:#EB9E9E;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}

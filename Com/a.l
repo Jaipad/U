@@ -31,26 +31,33 @@ SUMA                "+"
 RESTA               "-"
 MULT                "*"
 DIV                 "/"
+
 /* Operaciones Relacionales */
 IGUAL               "="
 MAYOR               ">"
 MENOR               "<"
+
 /* Palabras reservadas */
 INICIO              "INICIO"
 LEER                "LEER" 
 ENTONCES            "ENTONCES"
 FIN                 "FIN"
-texto               "("[^"]+")"
+
+/* Tokens adicionales */
+texto               \"[^\"]*\"
+cost                [0-9]+
 
 /* Sección de reglas */
 %%
 
-{SUMA}              { return SUMA; }
-{RESTA}             { return RESTA; }
-{IGUAL}             { return IGUAL; }
-{IDENTIFICADOR}     { yylval.string_val = strdup(yytext); return IDENTIFICADOR; }
-{ENTERO}            { yylval.entero = atoi(yytext); return ENTERO;}
-\"[^"]*\"           { yylval.string_val = strdup(yytext); return texto; }
+{DIGITO}            { printf("\nOperador digito: (%s)", yytext); }
+{CHAR_PUNTOYCOMA}   { printf("\nSimbolo punto y coma: (%s)", yytext); }
+{SUMA}              { printf("\nOperador suma: (%s)", yytext); }
+{RESTA}             { printf("\nOperador resta: (%s)", yytext); }
+{IGUAL}             { printf("\nOperador igual: (%s)", yytext); }
+{IDENTIFICADOR}     { printf("\nIdentificador: (%s)", yytext); }
+{texto}             { printf("\nTexto: (%s)", yytext); }
+{cost}              { printf("\nCosto: (%s)", yytext); }
 
 "INICIO"            { return INICIO; }
 "FIN"               { return FIN; }
@@ -60,4 +67,5 @@ texto               "("[^"]+")"
 "ENTONCES"          { return ENTONCES; }
 "("                 { return PAR_IZQ; }
 ")"                 { return PAR_DER; }
+
 %%
